@@ -5,16 +5,22 @@ function Highlight.create(Object, Props)
 	assert(typeof(Object) == "Instance", "Instance must be an Instance")
 	assert(type(Props) == "table", "Props must be a table")
 
-	local newHightlight = Instance.new("Highlight")
-	newHightlight.Parent = Object
+	local newHighlight = Instance.new("Highlight")
+	newHighlight.Parent = Object
 
 	for Index, Property in next, Props do
-		newHightlight[Index] = Property
+		newHighlight[Index] = Property
 	end
 
 	return setmetatable({
-		Object = newHightlight,
+		Object = newHighlight,
 	}, Highlight)
+end
+
+function Highlight.bulk(Objects, Props)
+	for _, Object in next, Objects do
+		Highlight.create(Object, Props)
+	end
 end
 
 function Highlight:Destroy()
