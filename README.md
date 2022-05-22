@@ -47,15 +47,15 @@ local Highlight = loadstring(game:HttpGet("https://raw.githubusercontent.com/ovi
 
 -- Creating the module
 local newHighlight = Highlight.create(game:GetService("Players").LocalPlayer.Character, {
-	FillColor = Color3.fromRGB(30,30,30),
-	OutlineColor = Color3.fromRGB(150,150,150),
+	FillColor = Color3.fromRGB(30, 30, 30),
+	OutlineColor = Color3.fromRGB(150, 150, 150),
 })
 
 task.wait(3)
 
 -- Changing colors of highlight
 newHighlight:Edit({
-    FillColor = Color3.fromRGB(0, 30, 0),
+	FillColor = Color3.fromRGB(0, 30, 0),
 	OutlineColor = Color3.fromRGB(0, 50, 180),
 })
 
@@ -63,4 +63,5 @@ task.wait(3)
 
 -- Destroying the highlight
 newHighlight:Destroy()
+
 ```
