@@ -17,12 +17,6 @@ function Highlight.create(Object, Props)
 	}, Highlight)
 end
 
-function Highlight.bulk(Objects, Props)
-	for _, Object in next, Objects do
-		Highlight.create(Object, Props)
-	end
-end
-
 function Highlight:Destroy()
 	return self.Object:Destroy()
 end
