@@ -13,6 +13,7 @@ function Highlight.create(Object, Props)
 	end
 
 	return setmetatable({
+		Connections = {},
 		Object = newHighlight,
 	}, Highlight)
 end
@@ -24,6 +25,16 @@ end
 function Highlight:Edit(Props)
 	for Index, Property in next, Props do
 		self.Object[Index] = Property
+	end
+end
+
+function Highlight:AddConnection(Event)
+	self.Connections[#self.Connections + 1] = Event
+end
+
+function Highlight:Cleanup()
+	for _, Connection in next, self.Connections do
+		Connection:Disconnect()
 	end
 end
 
